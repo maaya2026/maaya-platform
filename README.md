@@ -1,82 +1,92 @@
-# MAAYA Platform
+# MAAYA
 
-> **MAAYA — The intelligence behind everything.**
+**The intelligence behind everything.**
 
-MAAYA is an early-stage AI operations platform for small businesses. The platform will connect communication, knowledge, tasks, meetings, and business workflows while keeping people in control of consequential AI actions.
+MAAYA is an AI operations platform for small businesses.
 
-This repository begins as a **modular monolith**. Each MAAYA product is documented and demonstrated separately, while sharing one maintainable platform, database foundation, and deployment path.
+The long-term goal is to connect fragmented business workflows such as email, tasks, documents, customers, meetings, recruiting, support, sales, and analytics into one intelligent workspace.
 
-## Day 1 milestone
+## Current Status
 
-- Python project managed with `uv`
-- FastAPI application
-- Typed settings
-- Health and readiness endpoints
-- Automated API tests
-- Ruff linting and formatting
-- Pyright static type checking
-- Architecture decision-record template
+MAAYA is currently in active development.
 
-## Prerequisites
+The engineering foundation currently includes:
 
+- Python backend project
+- FastAPI API framework
+- Health and readiness API endpoints
+- Automated tests with pytest
+- Code quality checks with Ruff
+- Static type checking with Pyright
+- Git version control
+- GitHub development workflow
+- Modular monolith architecture
+
+## Current Product: Workspace & Authorization
+
+The first MAAYA product is the secure workspace and authorization foundation that future MAAYA modules will build on.
+
+Currently under development:
+
+- User authentication
+- Business workspaces
+- Workspace memberships
+- Roles and permissions
+- Protected API endpoints
+- Tenant isolation
+- Audit logging
+
+## Next Product: MAAYA Inbox
+
+MAAYA Inbox will turn business email into organized, actionable work.
+
+Planned capabilities include:
+
+- Email ingestion
+- AI email classification
+- Summaries and priority detection
+- Task and deadline extraction
+- Suggested responses
+- Human review before important actions
+
+## Architecture
+
+MAAYA is being built initially as a **modular monolith**.
+
+This means the platform uses one integrated codebase while keeping major business capabilities separated into clear modules.
+
+This allows MAAYA to move quickly during early development without introducing unnecessary microservice complexity.
+
+## Technology
+
+### Currently Used
+
+- Python
+- FastAPI
+- pytest
+- Ruff
+- Pyright
 - Git
-- `uv`
-- Docker Desktop (needed later this week, not required for Day 1)
-- A GitHub account
-- VS Code or another editor
+- GitHub
 
-## Start the application
+### Planned as the platform develops
 
-```bash
-uv sync
-cp .env.example .env
-uv run fastapi dev src/maaya/main.py
-```
+- PostgreSQL
+- SQLAlchemy
+- React
+- TypeScript
+- AWS
+- Large Language Model integrations
 
-Open:
+## Development Philosophy
 
-- API root: http://127.0.0.1:8000/
-- Health: http://127.0.0.1:8000/health
-- Readiness: http://127.0.0.1:8000/ready
-- API documentation: http://127.0.0.1:8000/docs
+MAAYA is being developed as both:
 
-## Run quality checks
+1. A real software product for small businesses.
+2. A hands-on engineering project demonstrating backend, AI, cloud, security, and software architecture skills.
 
-```bash
-uv run ruff format --check .
-uv run ruff check .
-uv run pyright
-uv run pytest
-```
+The platform is being built incrementally, with each major module designed, tested, documented, and integrated into the larger MAAYA system.
 
-To apply formatting:
+---
 
-```bash
-uv run ruff format .
-```
-
-## Suggested first commit
-
-```bash
-git init
-git branch -M main
-git add .
-git commit -m "chore: initialize MAAYA platform foundation"
-```
-
-Then create a GitHub repository named `maaya-platform` and follow GitHub's instructions to add the remote and push the `main` branch.
-
-## Current architecture
-
-```text
-src/maaya/
-├── api/
-│   ├── router.py
-│   └── routes/
-│       └── health.py
-├── core/
-│   └── config.py
-└── main.py
-```
-
-Future product modules will live under `src/maaya/modules/`, beginning with `workspace/`, followed by `inbox/` and `tasks/`.
+**MAAYA — The intelligence behind everything.**
