@@ -1,0 +1,21 @@
+name: maaya-local-dev
+
+services:
+  postgres-db-service:
+    image: postgres:18
+    container_name: maaya-postgres-container
+
+    environment:
+      POSTGRES_USER: ${MAAYA_DB_USER}
+      POSTGRES_PASSWORD: ${MAAYA_DB_PASSWORD}
+      POSTGRES_DB: ${MAAYA_DB_NAME}
+
+    ports:
+      - "127.0.0.1:5432:5432"
+
+    volumes:
+      - maaya-postgres-data-volume:/var/lib/postgresql
+
+volumes:
+  maaya-postgres-data-volume:
+    name: maaya-postgres-data-volume
