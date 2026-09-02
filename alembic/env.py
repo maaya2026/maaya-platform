@@ -2,6 +2,7 @@ from logging.config import fileConfig
 
 from alembic import context
 
+import maaya.core.database_model_registry  # noqa: F401
 from maaya.core.database_connection import database_engine, database_url
 from maaya.core.database_model_base import DatabaseBase
 
