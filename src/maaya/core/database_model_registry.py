@@ -1,3 +1,3 @@
-from maaya.modules.workspace.database_models import Workspace
+from maaya.modules.workspace.database_models import Membership, User, Workspace
 
-__all__ = ["Workspace"]
+__all__ = ["Membership", "User", "Workspace"]
